@@ -9,6 +9,15 @@
     color: white;
 }
 
+.title {
+    position: absolute;
+    font-size: 1.5rem;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    font-weight: bolder;
+}
+
 body {
     height: 100vh;
     height: 100svh;
