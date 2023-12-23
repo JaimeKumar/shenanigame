@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: 'Montserrat';
+    color: white;
+}
+
+body {
+    height: 100vh;
+    height: 100svh;
+    display: grid;
+    place-items: center;
+    background-color: #b6735b;
+}
+
+.container {
+    width: min(90vw, 600px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 50px;
+    align-items: center;
+}
+
+.joinForm {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+input {
+    width: 130px;
+    height: 28px;
+    padding: 4px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    color: black;
+    font-weight: bold;
+}
+
+.button {
+    background-color: rgb(61, 151, 206);
+    padding: 5px 15px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    box-shadow: 2px 2px 2px #00000055;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    border: none;
+    font-size: 1.1rem;
+}
+
+.button:active {
+    box-shadow: inset 2px 2px 8px #00000044;
+}
+
+.voteButtons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.selected {
+    background-color: #7c4c4c;
+    transform: scale(1.1)
+}
+
+.points {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    position: relative;
+}
+
+.pointsPlayer {
+    display: flex;
+    position: absolute;
+    column-gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    transform: translate(-50%, -50%);
+}
+
+.pointsPlayer * {
+    min-width: 100px;
+}
+
+.greyed {
+    background-color: #9b9b9b;
+}
+
+.hidden {
+    display: none;
+    gap: 0;
+}
+
+.hidden * {
+    display: none;
+}

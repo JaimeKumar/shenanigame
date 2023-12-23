@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Shenanigans</title>
+</head>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="index.js"></script>
+    <div class="container">
+        <div class="joinForm" id="joinForm">
+            <b>Name</b>
+            <input id="joinName" type="text" maxlength="8">
+        </div>
+        <button class="button" id="joinGame" onclick="joinGame()">Join Game</button>
+        <button id="readyButton" class="button hidden" onclick="readyUp()">Ready</button>
+        <span id="task" class="taskMsg hidden"></span>
+        <button id="voteButton" class="button hidden" onclick="vote()">Vote</button>
+        <div id="voteButtons" class="voteButtons hidden"></div>
+        <button id="confirmVote" class="button greyed hidden" onclick="submitVote()">Submit</button>
+        <button id="revealButton" class="button hidden" onclick="reveal()">Reveal</button>
+        <button id="skipButton" class="button hidden" onclick="skipTask()">Skip</button>
+        <div id="successVote" class="voteButtons hidden">
+            <button class="button" id="trueSuccess" onclick="successVote(true)">Yes</button>
+            <button class="button" id="falseSuccess" onclick="successVote(false)">No</button>
+        </div>
+        <button class="button greyed hidden" id="confirmSuccess" onclick="submitSuccess()">Submit</button>
+        <div class="points hidden" id="points">
+            <div class="pointsPlayer">
+                <b>Player</b>
+                <b>Points</b>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
