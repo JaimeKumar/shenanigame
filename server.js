@@ -160,8 +160,7 @@ class Room {
 
 io.on('connection', socket => {
     let recover = false;
-    console.log(socket.handshake)
-    console.log(socket.handshake.headers.cookie)
+    console.log(socket)
     Object.keys(players).forEach(id => {
         if (players[id].handshake.headers.cookie === socket.handshake.headers.cookie) {
             let newPlayer = {...rooms[players[id].room].players[id]}
