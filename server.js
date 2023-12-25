@@ -160,23 +160,23 @@ class Room {
 
 io.on('connection', socket => {
     let recover = false;
-    console.log(socket)
-    Object.keys(players).forEach(id => {
-        if (players[id].handshake.headers.cookie === socket.handshake.headers.cookie) {
-            let newPlayer = {...rooms[players[id].room].players[id]}
-            delete rooms[players[id].room].players[id];
-            rooms[players[id].room].players[id] = newPlayer;
+    // console.log(socket)
+    // Object.keys(players).forEach(id => {
+    //     if (players[id].handshake.headers.cookie === socket.handshake.headers.cookie) {
+    //         let newPlayer = {...rooms[players[id].room].players[id]}
+    //         delete rooms[players[id].room].players[id];
+    //         rooms[players[id].room].players[id] = newPlayer;
             
-            let room = players[id].room;
-            delete players[id]
-            socket.join(room);
-            socket.id = id;
-            players[id] = socket;
-            players[id].room = room;
-            rooms[players[id].room].recoverState(id)
-            recover = true;
-        }
-    })
+    //         let room = players[id].room;
+    //         delete players[id]
+    //         socket.join(room);
+    //         socket.id = id;
+    //         players[id] = socket;
+    //         players[id].room = room;
+    //         rooms[players[id].room].recoverState(id)
+    //         recover = true;
+    //     }
+    // })
 
     if (!recover) {
         players[socket.id] = socket;
